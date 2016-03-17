@@ -6,6 +6,7 @@
 
 <link rel="import" href="../paper-checkbox/paper-checkbox.html">
 <link rel="import" href="../paper-tooltip/paper-tooltip.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
 
 <script src="weakCache.js"></script>
 
@@ -60,10 +61,10 @@
 				box-sizing: border-box;
 				height: 56px;
 			}
-			th:not([data-sortable]) iron-icon.sort{
+			th:not([data-sortable]) paper-icon-button.sort{
 				display: none;
 			}
-			th[data-sortable] iron-icon.sort {
+			th[data-sortable] paper-icon-button.sort {
 				transition: transform .2s linear, width .2s linear, color .2s linear;
 				color: rgba(0,0,0, .26);
 				width: 0px;
@@ -72,7 +73,7 @@
 			th[data-sortable]{
 				cursor: pointer;
 			}
-			th[data-sortable]:not([data-sorted]):hover iron-icon{
+			th[data-sortable]:not([data-sorted]):hover paper-icon-button{
 
 			}
 			th[data-sortable][data-sorted], th[data-sortable]:hover{
@@ -80,20 +81,20 @@
 				color: rgba(0,0,0, .87);
 				@apply(--paper-datatable-column-header-sorted);
 			}
-			th[data-sortable][data-sorted] iron-icon, th[data-sortable]:hover iron-icon{
+			th[data-sortable][data-sorted] paper-icon-button, th[data-sortable]:hover paper-icon-button{
 				width: 24px;
 			}
-			th[data-sortable][data-sorted] iron-icon.sort{
+			th[data-sortable][data-sorted] paper-icon-button.sort{
 				color: rgba(0,0,0, .87);
 				@apply(--paper-datatable-column-header-sorted);
 			}
-			th[data-sortable]:not([data-sorted]) iron-icon{
+			th[data-sortable]:not([data-sorted]) paper-icon-button{
 				transform: rotate(180deg);
 			}
-			th[data-sortable]:not([data-sorted]):not([data-sort-direction='desc']) iron-icon{
+			th[data-sortable]:not([data-sorted]):not([data-sort-direction='desc']) paper-icon-button{
 				transform: rotate(0deg);
 			}
-			th[data-sortable][data-sorted]:not([data-sort-direction='desc']) iron-icon{
+			th[data-sortable][data-sorted]:not([data-sort-direction='desc']) paper-icon-button{
 				transform: rotate(180deg);
 			}
 			tr td{
@@ -116,18 +117,19 @@
 			td.bound-cell div span{
 				flex: 1;
 			}
-			td.bound-cell iron-icon.editable{
-				display: none;
+			td.bound-cell paper-icon-button.editable{
+				/*display: none;*/
 			}
 			td.bound-cell div{
 				display: flex;
 				align-items:center;
 			}
-			td.bound-cell[data-edit-icon] iron-icon.editable{
+			td.bound-cell[data-edit-icon] paper-icon-button.editable{
 				color: var(--paper-datatable-icon-color, rgba(0,0,0,.54));
 				width: 18px;
-				display: inline-block;
+				/*display: inline-block;*/
 				padding-left: 7px;
+				height: 18px;
 			}
 			td.bound-cell paper-input, td.bound-cell paper-textarea, paper-datatable-edit-dialog paper-input, paper-datatable-edit-dialog paper-textarea{
 				--paper-input-container-input: {
@@ -288,7 +290,8 @@
 									<td data-empty class="bound-cell" data-column="{{column}}" data-editable$="{{column.editable}}" data-edit-icon$="{{column.editIcon}}" on-tap="_cellTapped">
 										<div>
 											<span></span>
-											<iron-icon icon="datatable:editable" class="editable"></iron-icon>
+											<!--<iron-icon icon="datatable:editable" class="editable"></iron-icon>-->
+											<paper-icon-button icon="datatable:editable" class="editable"></paper-icon-button>
 										</div>
 									</td>
 								</template>

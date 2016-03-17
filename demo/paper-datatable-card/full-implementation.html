@@ -171,16 +171,16 @@
 			};
 
 			app.rowTapped = function(ev){
-				if(app.isDebouncerActive('dblclick'+ev.detail.item.id)){
-					//double click
-					app.$.datatableCard.deselectAll();
-					app.$.datatableCard.select(ev.detail.item.id);
-					app.editDialogForSelected();
-					ev.preventDefault();
-					app.cancelDebouncer('dblclick');
-				}else{
-					app.debounce('dblclick'+ev.detail.item.id, function(){}, 300);
-				}
+//				if(app.isDebouncerActive('dblclick'+ev.detail.item.id)){
+//					//double click
+//					app.$.datatableCard.deselectAll();
+//					app.$.datatableCard.select(ev.detail.item.id);
+//					app.editDialogForSelected();
+//					ev.preventDefault();
+//					app.cancelDebouncer('dblclick');
+//				}else{
+//					app.debounce('dblclick'+ev.detail.item.id, function(){}, 300);
+//				}
 			};
 
 			app.retrieveResults = function(ev){
