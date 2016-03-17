@@ -118,19 +118,22 @@
 				flex: 1;
 			}
 			td.bound-cell paper-icon-button.editable{
-				/*display: none;*/
+				display: none;
 			}
 			td.bound-cell div{
 				display: flex;
 				align-items:center;
 			}
-			td.bound-cell[data-edit-icon] paper-icon-button.editable{
+			tr td:nth-child(3) paper-icon-button.editable {
+				display: block;
+			}
+/*			td.bound-cell[data-edit-icon] paper-icon-button.editable{
 				color: var(--paper-datatable-icon-color, rgba(0,0,0,.54));
 				width: 18px;
-				/*display: inline-block;*/
+				display: inline-block; 
 				padding-left: 7px;
 				height: 18px;
-			}
+			}*/
 			td.bound-cell paper-input, td.bound-cell paper-textarea, paper-datatable-edit-dialog paper-input, paper-datatable-edit-dialog paper-textarea{
 				--paper-input-container-input: {
 					font-size: 13px;
